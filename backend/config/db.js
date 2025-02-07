@@ -5,7 +5,7 @@ export const connection = async () =>{
     try{
         //get mongoDB from .env
         const con = await mongoose.connect(process.env.ATLAS_URI);
-        console.log("connected bitchjhhh")
+        console.log("connected")
 
     }catch(error){
         console.log(error)
