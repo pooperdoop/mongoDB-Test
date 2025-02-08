@@ -1,10 +1,10 @@
-import LoginPage from "./components/loginPage"
+import SignUpandIn from "./components/SignUpandIn"
 
 function App() {
 
   return (
     <>
-      <LoginPage />
+      <SignUpandIn />
     </>
   )
 }
