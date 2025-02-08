@@ -9,13 +9,14 @@ import accountRoutes from './routes/account.route.js'
 dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 5000;
 
 // middleware that allows json data in the res.body
 app.use(express.json());
 
 app.use("/api/account", accountRoutes)
 
-app.listen(5000, () => {
+app.listen(port, () => {
 
     connection();
     console.log('testttting');
