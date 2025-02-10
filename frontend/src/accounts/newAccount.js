@@ -8,7 +8,7 @@ export const createNewAccount = create((set) => ({
             return {success: false, message:"Make sure all fields are filled!"}
         } 
 
-        const res = await fetch("/api/account/signup", {
+        const res = await fetch("/api/account/Sign-Up", {
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
@@ -18,6 +18,7 @@ export const createNewAccount = create((set) => ({
 
         const data = await res.json();
         set((state) => ({accounts:[...state.accounts, data.data]}))
+        console.log(data)
         return {success: true, message:"Account created"}
     }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { loginCheck } from '../accounts/loginAccountData';
 
 
 const Login = () => {
@@ -13,15 +14,11 @@ const Login = () => {
 
 
 
-
-  const handleLogin = async(event) =>{
+  const handleLogin = (event) =>{
     event.preventDefault();
-    const {success, message} = await createAccount(newAccount);
-    console.log("Success:", success);
-    console.log("Message:", message);
+    loginCheck(event, loginData.email, loginData.password);
+
   }
-
-
 
   function gotoSignup(){
     navigate('/Sign-Up');
