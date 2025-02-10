@@ -1,6 +1,22 @@
 import Account from '../models/accounts.model.js';
 import mongoose from 'mongoose';
 
+export const loginAccount = async (req, res)=>{
+    try{
+        const loginData = req.body;
+        const user = await Account.findOne(loginData.email);
+
+        if(user && user.password){
+            res.status(200).json({success:true, message:"successfully logged in"});
+        }
+        else{
+            return res.status(500).json({success: false, message:"wrong credentials"});
+        }
+    } catch(error){
+        return res.status(500).json({success: false, message:"no such account"});
+    }
+}
+
 export const getAccounts = async (req,res)=>{
 
     try {

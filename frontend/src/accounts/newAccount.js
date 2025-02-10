@@ -8,7 +8,7 @@ export const createNewAccount = create((set) => ({
             return {success: false, message:"Make sure all fields are filled!"}
         } 
 
-        const res = await fetch("/api/account/", {
+        const res = await fetch("/api/account/signup", {
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
