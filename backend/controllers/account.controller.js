@@ -5,7 +5,7 @@ export const loginAccount = async (req, res)=>{
     try{
         const loginData = req.body;
         const user = await Account.findOne({email:loginData.email});
-        if(user && user.password === loginData.password){
+        if(user && user.password.trim() === loginData.password.trim()){
             res.status(200).json({success:true, message:"successfully logged in"});
         }
         else{
