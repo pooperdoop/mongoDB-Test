@@ -12,7 +12,7 @@ export const loginAccount = async (req, res)=>{
             return res.status(400).json({success: false, message:"wrong credentials"});
         }
     } catch(error){
-        return res.status(500).json({success: false, message:"no such account BTICHASS"});
+        return res.status(500).json({success: false, message:"no such account"});
     }
 }
 
