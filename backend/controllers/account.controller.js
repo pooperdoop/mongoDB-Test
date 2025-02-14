@@ -1,7 +1,10 @@
 import Account from '../models/accounts.model.js';
 import mongoose from 'mongoose';
 
+
+
 export const loginAccount = async (req, res)=>{
+
     try{
         const loginData = req.body;
         const user = await Account.findOne({email:loginData.email});

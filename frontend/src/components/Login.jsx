@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleLogin = (event) =>{
     event.preventDefault();
-    loginCheck(event, loginData.email, loginData.password);
+    loginCheck(event, loginData.email, loginData.password, navigate);
 
   }
 
